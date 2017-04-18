@@ -20,6 +20,7 @@ class SessionController < ApplicationController
             errors.push "Email required\n\r"  if params[:Email].empty?
             errors.push "Password required\n\r"  if params[:Password].empty?
             flash[:errors] = errors
+            session[:user_id]  = nil
             return redirect_to :back
         end
 
