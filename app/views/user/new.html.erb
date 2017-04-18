@@ -1,0 +1,83 @@
+<h1>Lender</h1>
+<form action="/users"  method="post">
+ <input type = 'hidden' name = "authenticity_token" value = "<%=form_authenticity_token%>">
+  <input type = 'hidden' name = "UserType" value = "lender">
+ <div class="form-group">
+    <label for="first_name">Firsrt Name</label>
+    <input type="text" class="form-control" id="first_name" placeholder="FirstName" name='FirstName'>
+  </div><br>
+
+  <div class="form-group">
+    <label for="last_name">Last Name</label>
+    <input type="text" class="form-control" id="last_name" placeholder="LastName" name='LastName'>
+  </div><br>
+
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" placeholder="Email" name='Email'>
+  </div><br>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" placeholder="Password" name='Password'>
+  </div><br>
+  <div class="form-group">
+    <label for="password_confirmation">Password Confirmation</label>
+    <input type="password" class="form-control" id="password_confirmation" placeholder="Password Confirmation" name='Password_Confirmation'>
+  </div><br>
+
+  <div class="form-group">
+    <label for="amount">Money ($):</label>
+    <input type="number" class="form-control" id="Amount" placeholder="0" name='Amount'>
+  </div><br>
+   
+  <button type="submit" class="btn btn-info">Register</button><br><br>
+  <a href="/login">Already a member</a>
+</form>
+<br>
+<br>
+<br>
+<h1>Borrower</h1>
+<form action="/users"  method="post">
+
+ <input type = 'hidden' name = "authenticity_token" value = "<%=form_authenticity_token%>">
+  <input type = 'hidden' name = "UserType" value = "borrower">
+
+ <div class="form-group">
+    <label for="first_name">Firsrt Name</label>
+    <input type="text" class="form-control" id="first_name" placeholder="FirstName" name='FirstName'>
+  </div><br>
+
+  <div class="form-group">
+    <label for="last_name">Last Name</label>
+    <input type="text" class="form-control" id="last_name" placeholder="LastName" name='LastName'>
+  </div><br>
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" placeholder="Email" name='Email'>
+  </div><br>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" placeholder="Password" name='Password'>
+  </div><br>
+  <div class="form-group">
+    <label for="password_confirmation">Password Confirmation</label>
+    <input type="password" class="form-control" id="password_confirmation" placeholder="Password Confirmation" name='Password_Confirmation'>
+  </div><br>
+
+  <div class="form-group">
+    <label for="reason">Need Money for:</label>
+    <input type="text" class="form-control" id="reason" placeholder="reason...." name='Reason'>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Need Money for:</label>
+    <textArea type="text" class="form-control" id="description" placeholder="description...." name='Description'></textArea>
+  </div><br>
+
+  <div class="form-group">
+    <label for="amount">Amount Needed ($):</label>
+    <input type="number" class="form-control" id="amount" placeholder="0" name='Amount'>
+  </div><br>  
+  <button type="submit" class="btn btn-info">Register</button><br><br>
+   <a href="/login">Already a member</a>
+</form>

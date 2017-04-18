@@ -1,0 +1,33 @@
+<label for="name">Name</label>
+<h4 id="name"><%=  "#{@user.first_name} #{@user.last_name}" %></h4>
+<label for="needed">Amount Needed</label>
+<h5 id="needed"><%= @user.account.amount %></h5>
+<label for="raised">Amount Raised</label>
+<h4 id="raised"><%= @user.account.amount_raised %></h4><br><br>
+
+<div>
+       <h3>List of people who lent you money:</h3>
+        <table class="table table-condensed" id="user_transaction">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Amount Lent</th>                 
+            </tr>
+
+                <% @user.list_of_donors(@user.id).each do  |x| %>
+                
+                
+                    <tr>
+                        <th><%="#{User.find(x[0]).first_name} #{User.find(x[0]).last_name}" %></th>               
+                        <th><%= User.find(x[0]).email %></th> 
+                        <th><%= x[1]%></th> 
+                        
+                    </tr>
+                                
+                
+                <%end%>
+        
+
+        </table>
+</div><br><br>
+
