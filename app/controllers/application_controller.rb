@@ -5,11 +5,7 @@ class ApplicationController < ActionController::Base
 
    def current_user
      begin
-        User.includes(:donations)
-            .includes(:borrowers)
-            .includes(:lenders)
-            .includes(:credits)
-            .find(session[:user_id]) if session[:user_id]
+        User.find(session[:user_id]) if session[:user_id]
     rescue ActiveRecord::RecordNotFound 
         nil
     end

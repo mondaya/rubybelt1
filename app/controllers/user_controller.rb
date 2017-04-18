@@ -6,7 +6,11 @@ class UserController < ApplicationController
   def show
 
       if current_user.id === params[:id].to_i
-        @user = User.find(current_user.id)
+        @user = User.includes(:donations)
+                    .includes(:borrowers)
+                    .includes(:lenders)
+                    .includes(:credits)
+                    .find(current_user.id)
         return redirect_to lender_path(@user) if @user.account_type == "Lender"
         return redirect_to borrower_path(@user) if @user.account_type == "Borrower"
       end
