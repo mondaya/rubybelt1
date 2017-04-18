@@ -11,7 +11,7 @@ class SessionController < ApplicationController
         # if authenticate false
             # add an error message -> flash[:errors] = ["Invalid"]
             # redirect to login page
-        @user = User.find_by_email(params[:Email].downcase!) if params[:Email]
+        @user = User.find_by_email(params[:Email].downcase) if params[:Email]
         if @user.try(:authenticate, params[:Password])
                 session[:user_id] =  @user.id
                 return redirect_to "/users/#{@user.id}"
